@@ -19,7 +19,7 @@ function CreateData(eTag, eData = '', eClass = '') {
 }
 
 function CreateCongressTable(data) {
-	let table = CreateData('table');
+	let table = CreateData('table', '', 'table table-responsive table-hover');
 
 	document.getElementById('data').appendChild(table);
 

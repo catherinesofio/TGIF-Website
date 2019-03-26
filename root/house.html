@@ -2,26 +2,26 @@
 <html lan="en">
   <head>
 		<title>TGIF</title>
+    <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="styles/style.css">
   </head>
   
   <body>
-		<header>
-			<div id="logo">
-				<img src="" alt="logo">
-				<h1>TGIF</h1>
-			</div>
-			<div id="contact">
-				<img src="" alt="contact">
-				<a href="mailto:info@tgif.net">info@tgif.net</a>
-			</div>
+		<header class="container-fluid row">
+			<img src="assets/logo.png" alt="logo" class="col-lg-2">
+			<h1 class="col-lg-4">TGIF</h1>
+			<img src="assets/contact.png" alt="contact" class="col-lg-2">
+			<a href="mailto:info@tgif.net" class="col-lg-4">info@tgif.net</a>
 		</header>
 		
-		<nav>
+		<nav class="container-fluid navbar navbar-default">
 			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li>
-					<a href="#">Congress 113</a>
-					<ul>
+				<li class="col-lg-1"><a href="index.html">Home</a></li>
+				<li class="col-lg-2">
+					<a href="#" data-toggle="dropdown">Congress 113</a>
+					<ul class="dropdown-menu">
 						<li><a href="#">House</a></li>
 						<li><a href="senate.html">Senate</a></li>
 					</ul>
@@ -30,18 +30,23 @@
 		</nav>
 		
 		<section>
-			<article>
+			<article class="container-fluid">
 				<h2>Congressmen</h2>
 				<p>The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and Senate re-pass the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect the U.S. President in case there is no majority in the Electoral College.</p>
-    <p>Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative.</p>
+    		<p>Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative.</p>
 			</article>
 				
-			<article id="data">
-			</article>
+			<article id="data" class="container-fluid"></article>
 		</section>
+		
+		<footer class="container-fluid">
+			<p>&#9400 2016 TGIF | All Rights Reserved</p>
+		</footer>
 		
     <script src="data/pro-congress-113-house.js"></script>
     <script src="scripts/utils.js"></script>
     <script src="scripts/congress_data.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   </body>
 </html>
