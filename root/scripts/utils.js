@@ -17,3 +17,11 @@ function CreateData(eTag, eData = '', eClass = '') {
 
   return e;
 }
+
+function CreateFormOption(value, name, parent = document.body) {
+  let e = CreateData('option');
+  e.value = value;
+  e.appendChild(document.createTextNode(name));
+  
+  parent.appendChild(e);
+}

@@ -1,10 +1,17 @@
-let checkboxes = [];
+let partyFilters = [];
+let stateFilter = document.getElementById("state-filter");
 
 Init();
 
 function Init() {
-  checkboxes = document.getElementsByName("table-filter");
-  checkboxes.forEach(AddCheckboxEvent);
+  partyFilters = document.getElementsByName("party-filter");
+  partyFilters.forEach(AddCheckboxEvent);
+  
+  for (let i = 0; i < data_states.length; i++) {
+    let state = stateFilter.states[i];
+    
+    CreateFormOption(state.abbreviation, state.name, stateFilter);
+  }
 }
 
 function AddCheckboxEvent(x) {
@@ -17,9 +24,9 @@ function OnChange(e) {
   ResetTable();
   
   if (e.target.checked) {
-    for (var i = 0; i < checkboxes.length; i++) {
-      if (checkboxes[i] != e.target) {
-        checkboxes[i].checked = false;
+    for (let i = 0; i < partyFilters.length; i++) {
+      if (partyFilters[i] != e.target) {
+        partyFilters[i].checked = false;
       }
     }
     CreateFilteredCongressTable(data_congress, e.target.value);
