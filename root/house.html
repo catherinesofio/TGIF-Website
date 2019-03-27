@@ -38,15 +38,16 @@
     </article>
     
     <article class="container-fluid row">
-      <form>
-        <fieldset class>
+      <form class="container row">
+        <fieldset class="col-ms-1 text-left">
           <label>Filter by Party:</label>
           <input type="checkbox" name="party-filter" value="R"> Republican
           <input type="checkbox" name="party-filter" value="D"> Democrat
           <input type="checkbox" name="party-filter" value="I"> Independent
-        
+        </fieldset>
+					
+				<fieldset id="state-filter" class="col-ms-1 text-right">
           <label> Filter by State:</label>
-          <select id="state-filter"></select>
         </fieldset>
       </form>
     </article>
