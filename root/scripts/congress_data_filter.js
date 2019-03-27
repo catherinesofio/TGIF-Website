@@ -1,50 +1,53 @@
+let filters = ['all', 'all'];
 let partyFilters = [];
-let stateFilter = document.getElementById("state-filter");
 
 Init();
 
 function Init() {
-  partyFilters = document.getElementsByName("party-filter");
-  partyFilters.forEach(AddCheckboxEvent);
-  
-  for (let i = 0; i < data_states.length; i++) {
-    let state = stateFilter.states[i];
-    
-    CreateFormOption(state.abbreviation, state.name, stateFilter);
-  }
+	partyFilters = document.getElementsByName("party-filter");
+	partyFilters.forEach(AddCheckboxEvent);
+
+	CreateSelectForm(SelectCollectionProperty(data_states.states, 'abbreviation'), SelectCollectionProperty(data_states.states, 'name'), document.getElementById("state-filter"), 'Filter by State:', OnChange);
 }
 
 function AddCheckboxEvent(x) {
-  x.onchange = OnChange;
-  
-  return x;
+	x.onchange = OnChange;
+
+	return x;
 }
 
 function OnChange(e) {
-  ResetTable();
-  
-  if (e.target.checked) {
-    for (let i = 0; i < partyFilters.length; i++) {
-      if (partyFilters[i] != e.target) {
-        partyFilters[i].checked = false;
-      }
-    }
-    CreateFilteredCongressTable(data_congress, e.target.value);
-  } else {
-    CreateCongressTable(data_congress);
-  }
+	if (event.target.getAttribute('name') === 'party-filter') {
+		if (e.target.checked) {
+			filters[0] = e.target.value;
+
+			for (let i = 0; i < partyFilters.length; i++) {
+				if (partyFilters[i] != e.target) {
+					partyFilters[i].checked = false;
+				} else {
+					filters[0] = 'all';
+				}
+			}
+		}
+	} else {
+		filters[1] = e.target.nodeValue;
+	}
+
+	ResetTable();
+
+	let data = JSON.parse(JSON.stringify(data_congress));
+	if (filters[0] !== 'all') {
+		data.results[0].members = FilterCollectionByProperty(data.results[0].members, 'party', filters[0]);
+	}
+
+	if (filters[0] !== 'all') {
+		data.results[0].members = FilterCollectionByPropertydata.results[0].members(data.results[0].members, 'state', filters[1]);
+	}
+
+	CreateCongressTable(data);
 }
 
 function ResetTable() {
-  let container = document.getElementById('data');
-  container.removeChild(container.firstChild);
-}
-
-function CreateFilteredCongressTable(data, party) {
-  let d = JSON.parse(JSON.stringify(data));
-  d.results[0].members = data.results[0].members.filter(x => x.party === party);
-  
-  CreateCongressTable(d);
-  
-  return ;
+	let container = document.getElementById('data');
+	container.removeChild(container.firstChild);
 }

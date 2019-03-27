@@ -1,6 +1,10 @@
 var data_states = {
   "states": [
     {
+        "name": "Show All",
+        "abbreviation": "all"
+    },
+		{
         "name": "Alabama",
         "abbreviation": "AL"
     },
