@@ -23,8 +23,8 @@
 			<li class="col-sm-2 list-group-item">
 				<a href="#" data-toggle="dropdown">Congress 113</a>
 				<ul class="dropdown-menu list-group">
-					<li><a href="#" class="list-group-item">House</a></li>
-					<li><a href="senate.html" class="list-group-item">Senate</a></li>
+					<li><a href="house.html" class="list-group-item">House</a></li>
+					<li><a href="#" class="list-group-item">Senate</a></li>
 				</ul>
 			</li>
 			<li class="col-sm-2 list-group-item">
@@ -46,39 +46,26 @@
 
 	<section>
 		<article class="container-fluid">
-			<h2>Congressmen</h2>
-			<p>The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and Senate re-pass the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect the U.S. President in case there is no majority in the Electoral College.</p>
-			<p>Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative.</p>
+			<h2>Party Loyalty</h2>
+			<p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans respectively, tend to be the most faithful in voting for their party's nominee for office and legislation that backs their party's agenda.</p>
+			
+			<div id="table-1"></div>
 		</article>
-
-		<article class="container-fluid row">
-			<form class="container row">
-				<fieldset class="col-ms-1 text-left">
-					<label>Filter by Party:</label>
-					<input type="checkbox" name="party-filter" value="R"> Republican
-					<input type="checkbox" name="party-filter" value="D"> Democrat
-					<input type="checkbox" name="party-filter" value="I"> Independent
-				</fieldset>
-
-				<fieldset id="state-filter" class="col-ms-1 text-right">
-					<label> Filter by State:</label>
-				</fieldset>
-			</form>
+		
+		<article>
+			<div id="table-2"></div>
+			<div id="table-3"></div>
 		</article>
-
-		<article id="data" class="container-fluid"></article>
 	</section>
-
+	
 	<footer class="container-fluid panel-footer row text-center">
 		<p>&#9400 2016 TGIF | All Rights Reserved</p>
 	</footer>
 
-	<script src="data/pro-congress-113-house.js"></script>
-	<script src="data/states.js"></script>
 	<script src="scripts/utils.js"></script>
-	<script src="scripts/congress_data.js"></script>
+	<script src="scripts/statistics_data.js" table-index="0"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </body>
-
+	
 </html>
