@@ -8,7 +8,7 @@ function FilterIfNull(x) {
   }
 }
 
-function CreateData(eTag, eData = '', eClass = '') {
+function CreateElement(eTag, eData = '', eClass = '') {
   let e = document.createElement(eTag);
   e.innerHTML = eData;
   if (eClass != '') {
@@ -18,34 +18,8 @@ function CreateData(eTag, eData = '', eClass = '') {
   return e;
 }
 
-function CreateTableFromObjArray(data, propertiesName, headerNames, caption = '', eClass = '', parent = document.body) {
-	let table = CreateData('table', '', eClass);
-	let length = propertiesName.length;
-	let width = data.length;
-	
-	let theader = table.appendChild(CreateData('theader'));
-	for(let i = 0; i < length; i++) {
-		theader.appendChild(CreateData('td', headerNames[i]));
-	}
-	
-	let tbody = table.appendChild(createData('tbody'));
-	for(let i = 0; i < width; i++) {
-		let tr = CreateData('tr');
-		tbody.appendChild(tr);
-		
-		for(let j = 0; j < length; j++) {
-			tr.appendChild(CreateData(data[i][propertiesName[j]]));
-		}
-	}
-	
-	table.createCaption();
-	table.innerHTML = caption;
-	
-	parent.appendChild(table);
-}
-
 function CreateSelectForm(values, names, parent = document.getElementsByName('form')[0], label = '', onChangeEv = '') {
-	parent.appendChild(CreateData('label'));
+	parent.appendChild(CreateElement('label'));
 	
 	let container = document.createElement('select');
   parent.appendChild(container);
@@ -63,6 +37,44 @@ function CreateSelectForm(values, names, parent = document.getElementsByName('fo
 	}
 }
 
+function CreateTable(data, parent = null, headerNames = null, caption = '', eClass = '') {
+  let table = CreateElement('table', parent, '', eClass);
+  let cols = data.length;
+  let rows = data[0].length;
+
+  if (headerNames !== null) {
+    let thead = CreateElement('thead', table);
+    let tr = CreateElement('tr', thead);
+    
+    for (let i = 0; i < cols; i++) {
+      CreateElement('th', tr, headerNames[i]);
+    }
+  }
+
+  let tbody = CreateElement('tbody', table);
+  for (let i = 0; i < rows; i++) {
+    let tr = CreateElement('tr', tbody);
+
+    for (let j = 0; j < cols; j++) {
+      let d = data[j][i];
+      
+      if (d.tagName === 'td') {
+        tr.appendChild(td);
+      }
+      else {
+        let td = CreateElement('td', tr);
+        td.appendChild(d);
+      }
+    }
+  }
+
+  if (caption != '') {
+    CreateElement('caption', table, caption);
+  }
+  
+  return table;
+}
+
 function FilterCollectionByProperty(collection, propertyName, value) {
 	return collection.filter(x => x[propertyName] === value);
 }
@@ -75,4 +87,15 @@ function SelectCollectionProperty(collection, propertyName) {
 	}
 	
 	return temp;
+}
+
+function ConvertToTableData(data) {
+	let d = [];
+	let count = data.length;
+	
+	for (var i = 0; i < count; i++) {
+		d.push(CreateElement('td', data[i]));
+	}
+	
+	return d;
 }

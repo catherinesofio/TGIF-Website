@@ -4,13 +4,13 @@ var data_tables = {
 			"caption": "* at a glance",
 			"headers": [
 				{
-					"01": "Party"
+					"value": "Party"
 				},
 				{
-					"02": "No. of Reps"
+					"value": "No. of Reps"
 				},
 				{
-					"03": "% Voted w/Party"
+					"value": "% Voted w/Party"
 				}
 			]
 		},
@@ -18,13 +18,13 @@ var data_tables = {
 			"caption": "* at a glance",
 			"headers": [
 				{
-					"01": "Party"
+					"value": "Party"
 				},
 				{
-					"02": "No. of Reps"
+					"value": "No. of Reps"
 				},
 				{
-					"03": "% Voted w/Party"
+					"value": "% Voted w/Party"
 				}
 			]
 		}
@@ -34,13 +34,13 @@ var data_tables = {
 			"caption": "Least Engaged (Bottom 0% Attendance)",
 			"headers": [
 				{
-					"01": "Name"
+					"value": "Name"
 				},
 				{
-					"02": "No. Party Votes"
+					"value": "No. Party Votes"
 				},
 				{
-					"03": "% Party Votes"
+					"value": "% Party Votes"
 				}
 			]
 		},
@@ -48,13 +48,13 @@ var data_tables = {
 			"caption": "Least Loyal (Bottom 0% Attendance)",
 			"headers": [
 				{
-					"01": "Name"
+					"value": "Name"
 				},
 				{
-					"02": "No. Party Votes"
+					"value": "No. Party Votes"
 				},
 				{
-					"03": "% Party Votes"
+					"value": "% Party Votes"
 				}
 			]
 		}
@@ -64,10 +64,10 @@ var data_tables = {
 			"caption": "Most Engaged (Bottom 0% Attendance)",
 			"headers": [
 				{
-					"01": "Name"
+					"value": "Name"
 				},
 				{
-					"02": "No. Missed Votes"
+					"value": "No. Missed Votes"
 				},
 				{
 					"03": "% Missed"
@@ -78,13 +78,13 @@ var data_tables = {
 			"caption": "Most Loyal (Bottom 0% Attendance)",
 			"headers": [
 				{
-					"01": "Name"
+					"value": "Name"
 				},
 				{
-					"02": "No. Missed Votes"
+					"value": "No. Missed Votes"
 				},
 				{
-					"03": "% Missed"
+					"value": "% Missed"
 				}
 			]
 		}

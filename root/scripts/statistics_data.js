@@ -1,15 +1,65 @@
-let congress = document.currentScript.getAttribute('Senate');
+let congress = document.currentScript.getAttribute('congress');
 
 LoadData();
 
 function LoadData()
 {
-	let i = '0' + document.currentScript.getAttribute('table-index');
-	let caption = data_statistics.table_01.['0' + table_index].caption;
+	let type = document.currentScript.getAttribute('filter');
+	
+	let data = [];
+	let d = data_congress.results[0].members;
+	
+	if (type === 'attendance') {
+		data = [ConvertToTableData(['Democrats', 'Republicans', 'Independents', 'Total']),
+						ConvertToTableData(GetRepresentativesByParty(d, ['D','R', 'I', 'all'])),
+						ConvertToTableData(GetVotesPerParty(d, ['D','R', 'I', 'all']))];
+		
+		CreateCongressTable('1', data);
+	}
+}
+
+function CreateCongressTable(index, data) {
+	let d;
+	if (congress === 'senate') {
+		d = data_tables['table_0' + index][0];
+	} else {
+		d = data_tables['table_0' + index][1];
+	}
+	
+	let parent = document.getElementById('table-0' + index);
+	
+	let caption = d.caption;
 	caption.replace('*', congress);
-	let eClass = 'table table-responsive table-hover';
-									
-	CreateTableFromObjArray(, data_statistics.table_01.[i].headers, caption, eClass, document.getElementById('table-2'));
-	CreateTableFromObjArray(, data_statistics.table_01.[i].headers, data_statistics.table_02.[i].caption, eClass, document.getElementById('table-2'));
-	CreateTableFromObjArray(, data_statistics.table_01.[i].headers, data_statistics.table_03.[i].caption, eClass, document.getElementById('table-3'));
+	
+	CreateTable(data, parent, d.headers.filter(x => x.value), caption, 'table table-responsive table-hover');
+}
+
+function GetRepresentativesByParty(d, parties) {
+	d = SelectCollectionProperty(d, 'party');
+	let data = [];
+	let count = parties.length;
+	
+	for (let i = 0; i < count; i++) {
+		data.push(d.filter(x => x === parties[i]));
+	}
+	
+	return data;
+}
+
+function GetVotesPerParty(d, parties) {
+	let data = [];
+	let count = parties.length;
+	
+	for (let i = 0; i < count; i++) {
+		let x = FilterCollectionByProperty(d, 'party', parties[i]);
+		let sum = 0;
+		
+		for (let j = x.length - 1; j >= 0; j--) {
+			sum += x[j];
+		}
+		
+		data.push(sum);
+	}
+	
+	return data;
 }
