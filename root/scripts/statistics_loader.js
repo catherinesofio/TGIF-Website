@@ -4,13 +4,22 @@ function LoadData() {
   let type = document.currentScript.getAttribute('filter');
 
   if (type === 'attendance') {
-    CreateTables('missed_votes');
+    CreateTables('missed_votes', 0);
   } else {
-    CreateTables('total_votes');
+    CreateTables('total_votes', 1);
   }
 }
 
-function CreateTables(property) {
+function SetJObjProperty(url, tableIndex, filterIndex, congressIndex, value) {
+  string json = File.ReadAllText(url);
+  dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
+  jsonObj['table-0' + tableIndex][filterIndex]['data'][congressIndex] = value;
+  string output = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObj, Newtonsoft.Json.Formatting.Indented);
+  File.WriteAllText(url, output);
+  obj = value;
+}
+
+function CreateTables(property, i) {
   let data = [];
   let d = data_congress.results[0].members;
 
@@ -34,7 +43,30 @@ function CreateTables(property) {
   a.push(a[0] + a[1] + a[2]);
   b.push('100%');
 
-  data.push(ConvertToTableData(['Democrats', 'Republicans', 'Independents', 'Total']));
+  data.push(['Democrats', 'Republicans', 'Independents', 'Total']);
+  data.push(a);
+  data.push(b);
+
+  let filter = document.currentScript.getAttribute('filter');
+  let congress = document.currentScript.getAttribute('congress');
+
+  let f;
+  if (filter === 'attendance') {
+    f = 0;
+  } else {
+    f = 1;
+  }
+
+  let c;
+  if (congress === 'senate') {
+    c = 0;
+  } else {
+    c = 1;
+  }
+
+  function SetJObjProperty(data_tables, f, 1, c, data);
+
+  /*data.push(ConvertToTableData(['Democrats', 'Republicans', 'Independents', 'Total']));
   data.push(ConvertToTableData(a));
   data.push(ConvertToTableData(b));
 
@@ -82,7 +114,7 @@ function CreateTables(property) {
   data.push(ConvertToTableData(b).reverse());
   data.push(ConvertToTableData(c).reverse());
 
-  CreateCongressTable('3', data);
+  CreateCongressTable('3', data);*/
 }
 
 function CreateCongressTable(index, data) {
