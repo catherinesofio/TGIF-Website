@@ -90,36 +90,3 @@ var data_tables = {
 		}
 	]
 }
-
-var data_statistics = {
-	"statistics": [
-		{
-			key: "",
-			value: ""
-		},
-		{
-			key: "",
-			value: ""
-		},
-		{
-			key: "",
-			value: ""
-		},
-		{
-			key: "",
-			value: ""
-		},
-		{
-			key: "",
-			value: ""
-		},
-		{
-			key: "",
-			value: ""
-		},
-		{
-			key: "",
-			value: ""
-		}
-	]
-}
