@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lan="en">
+<html lan="eng">
 
 <head>
   <title>TGIF</title>
@@ -9,12 +9,16 @@
   <link rel="stylesheet" href="styles/style.css">
 </head>
 
-<body>
-  <header class="container-fluid row">
-    <img src="assets/logo.png" alt="logo" class="col-sm-1 float-left">
-    <h1 class="col-sm-2 text-left">TGIF</h1>
-    <img src="assets/contact.png" alt="contact" class="col-sm-1 float-right mx-auto">
-    <a href="mailto:info@tgif.net" class="col-sm-1 text-right">info@tgif.net</a>
+<body class="container-fluid">
+  <header class="row justify-content-between">
+    <div class="col-xs-6">
+      <img src="assets/logo.png" alt="logo" class="col-xs-1">
+      <h1 class="col-xs-6">TGIF</h1>
+    </div>
+    <div class="col-xs-6">
+      <img src="assets/contact.png" alt="contact" class="col-xs-6">
+      <a href="mailto:info@tgif.net" class="col-xs-1">info@tgif.net</a>
+    </div>
   </header>
 
   <nav class="container-fluid row navbar navbar-default overflow-hidden">
@@ -27,20 +31,20 @@
           <li><a href="senate.html" class="list-group-item">Senate</a></li>
         </ul>
       </li>
-			<li class="col-sm-2 list-group-item">
-				<a href="#" data-toggle="dropdown">Attendance</a>
-				<ul class="dropdown-menu list-group">
-					<li><a href="attendance.html" class="list-group-item">Congress</a></li>
-					<li><a href="attendance.html" class="list-group-item">Senate</a></li>
-				</ul>
-			</li>
-			<li class="col-sm-2 list-group-item">
-				<a href="#" data-toggle="dropdown">Party Loyalty</a>
-				<ul class="dropdown-menu list-group">
-					<li><a href="party-loyalty.html" class="list-group-item">Congress</a></li>
-					<li><a href="party-loyalty.html" class="list-group-item">Senate</a></li>
-				</ul>
-			</li>
+      <li class="col-sm-2 list-group-item">
+        <a href="#" data-toggle="dropdown">Attendance</a>
+        <ul class="dropdown-menu list-group">
+          <li><a href="attendance-house.html" class="list-group-item">House</a></li>
+          <li><a href="attendance-senate.html" class="list-group-item">Senate</a></li>
+        </ul>
+      </li>
+      <li class="col-sm-2 list-group-item">
+        <a href="#" data-toggle="dropdown">Party Loyalty</a>
+        <ul class="dropdown-menu list-group">
+          <li><a href="party-loyalty-house.html" class="list-group-item">House</a></li>
+          <li><a href="party-loyalty-senate.html" class="list-group-item">Senate</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
@@ -71,7 +75,7 @@
   </section>
 
   <footer class="container-fluid panel-footer row text-center">
-    <p>&#9400 2016 TGIF | All Rights Reserved</p>
+    <p>&#9400; 2016 TGIF | All Rights Reserved</p>
   </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

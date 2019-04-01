@@ -12,35 +12,32 @@ function ResetValues() {
 }
 
 function CreateCongressTable(data) {
-	let table = CreateElement('table', '', 'table table-responsive table-hover');
+	let table = CreateElement('table', document.getElementById('data'), '', 'table table-responsive table-hover');
 
-	document.getElementById('data').appendChild(table);
+	let thead = CreateElement('thead', table);
+	CreateElement('td', thead, 'NAME');
+	CreateElement('td', thead, 'PARTY');
+	CreateElement('td', thead, 'STATE');
+	CreateElement('td', thead, 'SENIORITY');
+	CreateElement('td', thead, 'VOTES');
 
-	let thead = table.appendChild(CreateElement('thead'));
-	thead.appendChild(CreateElement('td', 'NAME'));
-	thead.appendChild(CreateElement('td', 'PARTY'));
-	thead.appendChild(CreateElement('td', 'STATE'));
-	thead.appendChild(CreateElement('td', 'SENIORITY'));
-	thead.appendChild(CreateElement('td', 'VOTES'));
-
-	let tbody = table.appendChild(CreateElement('tbody'));
+	let tbody = CreateElement('tbody', table);
 
 	let count = data.results[0].members.length;
 	for (var i = 0; i < count; i++) {
 		let x = data.results[0].members[i];
 
-		let tr = tbody.appendChild(CreateElement('tr'));
+		let tr = CreateElement('tr', tbody);
 
-		let name = CreateElement('a', FilterIfNull(x.first_name) + ' ' + FilterIfNull(x.middle_name) + ' ' + FilterIfNull(x.last_name));
+		let tdName = CreateElement('td', tr);
+      
+		let name = CreateElement('a', tdName, FilterIfNull(x.first_name) + ' ' + FilterIfNull(x.middle_name) + ' ' + FilterIfNull(x.last_name));
 		name.setAttribute('href', x.url);
 
-		let tdName = tr.appendChild(CreateElement('td'));
-		tdName.appendChild(name);
-
-		tr.appendChild(CreateElement('td', FilterIfNull(x.party)));
-		tr.appendChild(CreateElement('td', FilterIfNull(x.state)));
-		tr.appendChild(CreateElement('td', FilterIfNull(x.seniority)));
-		tr.appendChild(CreateElement('td', FilterIfNull(x.votes_with_party_pct + '%')));
+		CreateElement('td', tr, FilterIfNull(x.party));
+		CreateElement('td', tr, FilterIfNull(x.state));
+		CreateElement('td', tr, FilterIfNull(x.seniority));
+		CreateElement('td', tr, FilterIfNull(x.votes_with_party_pct + '%'));
 	}
 }
 

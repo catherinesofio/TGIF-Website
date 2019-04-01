@@ -48,28 +48,20 @@
     </ul>
   </nav>
 
-  <section>
-    <article class="container-fluid">
-      <h2>Senators</h2>
-      <p>First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate has several exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</p>
+  <section class="container-fluid">
+    <article class="row-fluid">
+      <div class="col-xs-6">
+        <h2>Party Loyalty</h2>
+        <p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans respectively, tend to be the most faithful in voting for their party's nominee for office and legislation that backs their party's agenda.</p>
+      </div>
+
+      <div id="table-01" class="col-xs-6"></div>
     </article>
 
-    <article class="container-fluid">
-      <form class="row-fluid">
-        <fieldset class="col-xs-6 text-left">
-          <label>Filter by Party:</label>
-          <input type="checkbox" name="party-filter" value="R"> Republican
-          <input type="checkbox" name="party-filter" value="D"> Democrat
-          <input type="checkbox" name="party-filter" value="I"> Independent
-        </fieldset>
-
-        <fieldset id="state-filter" class="col-xs-6 text-right">
-          <label> Filter by State:</label>
-        </fieldset>
-      </form>
+    <article class="row-fluid">
+      <div id="table-02" class="col-xs-6"></div>
+      <div id="table-03" class="col-xs-6"></div>
     </article>
-
-    <article id="data" class="container-fluid"></article>
   </section>
 
   <footer class="container-fluid panel-footer row text-center">
@@ -77,9 +69,9 @@
   </footer>
 
   <script src="data/pro-congress-113-senate.js"></script>
-  <script src="data/states.js"></script>
+  <script src="data/statistics.js"></script>
   <script src="scripts/utils.js"></script>
-  <script src="scripts/congress_data.js"></script>
+  <script src="scripts/statistics_data.js" congress="senate" filter="party-loyalty"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </body>

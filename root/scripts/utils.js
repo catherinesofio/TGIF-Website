@@ -8,9 +8,18 @@ function FilterIfNull(x) {
   }
 }
 
-function CreateElement(eTag, eData = '', eClass = '') {
+function Clone(x) {
+  return JSON.parse(JSON.stringify(x));
+}
+
+function CreateElement(eTag, parent = null, eData = '', eClass = '') {
   let e = document.createElement(eTag);
   e.innerHTML = eData;
+
+  if (parent != null) {
+    parent.appendChild(e);
+  }
+
   if (eClass != '') {
     e.setAttribute('class', eClass);
   }
@@ -19,22 +28,22 @@ function CreateElement(eTag, eData = '', eClass = '') {
 }
 
 function CreateSelectForm(values, names, parent = document.getElementsByName('form')[0], label = '', onChangeEv = '') {
-	parent.appendChild(CreateElement('label'));
-	
-	let container = document.createElement('select');
+  parent.appendChild(CreateElement('label'));
+
+  let container = document.createElement('select');
   parent.appendChild(container);
-	
-	if (onChangeEv !== '') {
-		container.onchange = onChangeEv;
-	}
-	
-	for (let i = 0; i < values.length; i++) {
-		let op = document.createElement('option');
-		op.value = values[i];
-		op.text = names[i];
-		
-		container.appendChild(op);
-	}
+
+  if (onChangeEv !== '') {
+    container.onchange = onChangeEv;
+  }
+
+  for (let i = 0; i < values.length; i++) {
+    let op = document.createElement('option');
+    op.value = values[i];
+    op.text = names[i];
+
+    container.appendChild(op);
+  }
 }
 
 function CreateTable(data, parent = null, headerNames = null, caption = '', eClass = '') {
@@ -45,7 +54,7 @@ function CreateTable(data, parent = null, headerNames = null, caption = '', eCla
   if (headerNames !== null) {
     let thead = CreateElement('thead', table);
     let tr = CreateElement('tr', thead);
-    
+
     for (let i = 0; i < cols; i++) {
       CreateElement('th', tr, headerNames[i]);
     }
@@ -57,11 +66,10 @@ function CreateTable(data, parent = null, headerNames = null, caption = '', eCla
 
     for (let j = 0; j < cols; j++) {
       let d = data[j][i];
-      
+
       if (d.tagName === 'td') {
         tr.appendChild(td);
-      }
-      else {
+      } else {
         let td = CreateElement('td', tr);
         td.appendChild(d);
       }
@@ -71,31 +79,49 @@ function CreateTable(data, parent = null, headerNames = null, caption = '', eCla
   if (caption != '') {
     CreateElement('caption', table, caption);
   }
-  
+
   return table;
 }
 
 function FilterCollectionByProperty(collection, propertyName, value) {
-	return collection.filter(x => x[propertyName] === value);
+  return collection.filter(x => x[propertyName] === value);
 }
 
 function SelectCollectionProperty(collection, propertyName) {
-	var temp = [];
-	
-	for (let i = 0; i < collection.length; i++) {
-		temp.push(collection[i][propertyName]);
-	}
-	
-	return temp;
+  var temp = [];
+
+  for (let i = 0; i < collection.length; i++) {
+    temp.push(collection[i][propertyName]);
+  }
+
+  return temp;
 }
 
 function ConvertToTableData(data) {
-	let d = [];
-	let count = data.length;
-	
-	for (var i = 0; i < count; i++) {
-		d.push(CreateElement('td', data[i]));
-	}
-	
-	return d;
+  let d = [];
+  let count = data.length;
+
+  for (var i = 0; i < count; i++) {
+    d.push(CreateElement('td', null, data[i]));
+  }
+
+  return d;
+}
+
+function CountCollectionElementsByPropertyValue(data, propertyName, value) {
+  let d = FilterCollectionByProperty(data, propertyName, value);
+
+  return d.length;
+}
+
+function SumCollectionElementsByPropertyValue(data, propertyName, value) {
+  let sum = 0;
+
+  let d = FilterCollectionByProperty(data, propertyName, value);
+
+  for (let j = d.length - 1; j >= 0; j--) {
+    sum += d[j];
+  }
+
+  return sum;
 }

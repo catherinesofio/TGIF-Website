@@ -37,10 +37,10 @@ var data_tables = {
 					"value": "Name"
 				},
 				{
-					"value": "No. Party Votes"
+					"value": "No. Missed Votes"
 				},
 				{
-					"value": "% Party Votes"
+					"value": "% Missed"
 				}
 			]
 		},
@@ -67,10 +67,10 @@ var data_tables = {
 					"value": "Name"
 				},
 				{
-					"value": "No. Missed Votes"
+					"value": "No. Party Votes"
 				},
 				{
-					"03": "% Missed"
+					"value": "% Party Votes"
 				}
 			]
 		},
