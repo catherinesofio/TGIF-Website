@@ -27,6 +27,12 @@ function CreateElement(eTag, parent = null, eData = '', eClass = '') {
   return e;
 }
 
+function CreateAnchorElements(strings, links) {
+  let elements = strings.map(x => { let e = CreateElement('a', null, x); e.href = links[strings.indexOf(x)]; return e; })
+  
+  return elements;
+}
+
 function CreateSelectForm(values, names, parent = document.getElementsByName('form')[0], label = '', onChangeEv = '') {
   parent.appendChild(CreateElement('label'));
 
