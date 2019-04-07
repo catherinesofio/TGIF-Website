@@ -12,6 +12,10 @@ function Clone(x) {
   return JSON.parse(JSON.stringify(x));
 }
 
+function FetchJSON(url, init = {}, OnLoad) {
+  fetch(url, init).then(response => response.json()).then(function(json) { OnLoad(json); });
+}
+
 function CreateElement(eTag, parent = null, eData = '', eClass = '') {
   let e = document.createElement(eTag);
   e.innerHTML = eData;
