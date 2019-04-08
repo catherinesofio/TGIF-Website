@@ -1,18 +1,42 @@
-let data_congress;
-let filters = ['all', 'all'];
-let partyFilters = [];
+let app;
 
 LoadData();
 
 function LoadData() {
-  if (document.currentScript.getAttribute('congress') === 'senate') {
-    FetchJSON('https://api.propublica.org/congress/v1/113/senate/members.json', { method: "GET", mode: "cors", headers: { "X-API-Key": "nHu99jpW1f8iZH7VUqO8YwgEYxnkh3oRyXb6mlIJ" } }, ResetValues);
-  } else {
-    FetchJSON('https://api.propublica.org/congress/v1/113/house/members.json', { method: "GET", mode: "cors", headers: { "X-API-Key": "nHu99jpW1f8iZH7VUqO8YwgEYxnkh3oRyXb6mlIJ" } }, ResetValues);
-  }
+  let url = 'https://api.propublica.org/congress/v1/113/' + document.currentScript.getAttribute('congress') + '/members.json';
+  
+  FetchJSON(url, { method: "GET", mode: "cors", headers: { "X-API-Key": "nHu99jpW1f8iZH7VUqO8YwgEYxnkh3oRyXb6mlIJ" } }, SetData);
 }
 
-function ResetValues(data) {
+function SetData(obj) {
+  let dataClone = Clone(obj.results[0].members);
+  
+  app = new Vue({
+    el: '#app',
+    data: {
+      members: obj.results[0].members,
+      filteredMembers: dataClone,
+      states: data_states.states,
+      partyFilter: 'Show All',
+      stateFilter: 'ALL'
+    },
+    methods: {
+      applyFilters: function (event) {
+        this.filteredMembers = Clone(this.members);
+        
+        if (this.partyFilter !== 'ALL') {
+          this.filteredMembers = this.members.filter(x => x['party'] === this.partyFilter);
+        }
+        
+        if (this.stateFilter !== 'ALL') {
+          this.filteredMembers = this.filteredMembers.filter(x => x['state'] === this.stateFilter);
+        }
+      }
+    }
+  })
+}
+
+/*function ResetValues(data) {
   data_congress = data;
   
   partyFilters = document.getElementsByName("party-filter");
@@ -20,24 +44,25 @@ function ResetValues(data) {
 
   CreateSelectForm(SelectCollectionProperty(data_states.states, 'abbreviation'), SelectCollectionProperty(data_states.states, 'name'), document.getElementById("state-filter"), 'Filter by State:', OnChange);
 
-  CreateCongressTable(data_congress);
+  CreateCongressTable(Clone(data_congress));
 }
 
-function CreateCongressTable() {
+function CreateCongressTable(data) {
   let table = CreateElement('table', document.getElementById('data'), '', 'table table-responsive table-hover');
 
   let thead = CreateElement('thead', table);
-  CreateElement('td', thead, 'NAME');
-  CreateElement('td', thead, 'PARTY');
-  CreateElement('td', thead, 'STATE');
-  CreateElement('td', thead, 'SENIORITY');
-  CreateElement('td', thead, 'VOTES');
+  let row = CreateElement('tr', thead);
+  CreateElement('th', row, 'NAME');
+  CreateElement('th', row, 'PARTY');
+  CreateElement('th', row, 'STATE');
+  CreateElement('th', row, 'SENIORITY');
+  CreateElement('th', row, 'VOTES');
 
   let tbody = CreateElement('tbody', table);
 
-  let count = data_congress.results[0].members.length;
+  let count = data.results[0].members.length;
   for (var i = 0; i < count; i++) {
-    let x = data_congress.results[0].members[i];
+    let x = data.results[0].members[i];
 
     let tr = CreateElement('tr', tbody);
 
@@ -75,7 +100,7 @@ function OnChange(e) {
   } else {
     filters[1] = e.target.value;
   }
-
+console.log('ke pasa wey');
   ResetTable();
 
   let data = JSON.parse(JSON.stringify(data_congress));
@@ -93,4 +118,4 @@ function OnChange(e) {
 function ResetTable() {
   let container = document.getElementById('data');
   container.removeChild(container.firstChild);
-}
+}*/
