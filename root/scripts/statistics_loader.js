@@ -1,4 +1,70 @@
-CreateCongressTables();
+let app;
+
+LoadData();
+
+function LoadData() {
+	let congress = document.currentScript.getAttribute('congress');
+	let d = data_tables;
+	let page;
+	
+	if (document.currentScript.getAttribute('page') === 'attendance') {
+		page = 0;
+	} else {
+		page = 1;
+	}
+	
+	app = new Vue({
+		el: 'app',
+		data: {
+			table01: {
+				caption: d.table01.caption.replace('*', congress.charAt(0).toUpperCase() + congress.substr(1)),
+				headers: d.table_01.headers,
+				col01: d.table_01[page].data[congress][0],
+				col02: d.table_01[page].data[congress][1],
+				col03: d.table_01[page].data[congress][2]
+			},
+			table02: {
+				caption: d.table02.caption.replace('*', congress.charAt(0).toUpperCase() + congress.substr(1)),
+				headers: d.table_02.headers,
+				names: d.table_02[page].data[congress][0],
+				links: d.table_02[page].data[congress][1],
+				col03: d.table_02[page].data[congress][2],
+				col04: d.table_02[page].data[congress][3]
+			},
+			table03: {
+				caption: d.table02.caption.replace('*', congress.charAt(0).toUpperCase() + congress.substr(1)),
+				headers: d.table_02.headers,
+				names: d.table_02[page].data[congress][0],
+				links: d.table_02[page].data[congress][1],
+				col03: d.table_02[page].data[congress][2],
+				col04: d.table_02[page].data[congress][3]
+			}
+		},
+		methods: {
+			getRows: function(columns) {
+				let i = 0;
+				let rows = columns[0].length;
+				let cols = columns.length;
+				
+				let data = [];
+				let row;
+				
+				while (i < rows) {
+					row = [];
+					
+					for (let j = 0; j < cols; j++) {
+						row.push(columns[j][i]);
+					}
+					
+					data.push(row);
+					i++;
+				}
+			}
+		}
+	})
+}
+
+/*CreateCongressTables();
 
 function CreateCongressTables() {
   let page;
@@ -34,7 +100,7 @@ function CreateCongressTable(tableIndex, page, addLinks = false) {
   caption = caption.replace('*', congress.charAt(0).toUpperCase() + congress.substr(1));
   
   CreateTable(data, document.getElementById('table-0' + tableIndex), tableData.headers, caption, 'table table-responsive table-hover');
-}
+}*/
 
 
 // USE ONLY TO CALCULATE THE STATISTICS

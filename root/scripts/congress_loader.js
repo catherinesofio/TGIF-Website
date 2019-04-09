@@ -17,15 +17,15 @@ function SetData(obj) {
       members: obj.results[0].members,
       filteredMembers: dataClone,
       states: data_states.states,
-      partyFilter: 'Show All',
+      partyFilter: 'ALL',
       stateFilter: 'ALL'
-    },
+		},
     methods: {
-      applyFilters: function (event) {
+      applyFilters: function () {
         this.filteredMembers = Clone(this.members);
         
         if (this.partyFilter !== 'ALL') {
-          this.filteredMembers = this.members.filter(x => x['party'] === this.partyFilter);
+          this.filteredMembers = this.filteredMembers.filter(x => x['party'] === this.partyFilter);
         }
         
         if (this.stateFilter !== 'ALL') {

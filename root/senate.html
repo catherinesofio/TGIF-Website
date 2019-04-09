@@ -66,6 +66,7 @@
         <fieldset class="col-xs-6 text-right">
           <label> Filter by State:</label>
           <select v-model="stateFilter" v-on:change="applyFilters">
+						<option value="ALL" hidden disabled selected>Show All</option>
             <option v-for="state in states" v-bind:value="state.abbreviation">{{ state.name }}</option>
           </select>
         </fieldset>

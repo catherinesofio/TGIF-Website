@@ -48,7 +48,7 @@
     </ul>
   </nav>
 
-  <section>
+  <section id="app">
     <article class="container-fluid">
       <h2>Congressmen</h2>
       <p>The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and Senate re-pass the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect the U.S. President in case there is no majority in the Electoral College.</p>
@@ -59,30 +59,55 @@
       <form class="row-fluid">
         <fieldset class="col-xs-6 text-left">
           <label>Filter by Party:</label>
-          <input type="checkbox" name="party-filter" value="R"> Republican
-          <input type="checkbox" name="party-filter" value="D"> Democrat
-          <input type="checkbox" name="party-filter" value="I"> Independent
+          <input type="checkbox" true-value="R" false-value="ALL" v-model="partyFilter" v-on:change="applyFilters"> Republican
+          <input type="checkbox" true-value="D" false-value="ALL" v-model="partyFilter" v-on:change="applyFilters"> Democrat
+          <input type="checkbox" true-value="I" false-value="ALL" v-model="partyFilter" v-on:change="applyFilters"> Independent
         </fieldset>
 
-        <fieldset id="state-filter" class="col-xs-6 text-right">
+        <fieldset class="col-xs-6 text-right">
           <label> Filter by State:</label>
+          <select v-model="stateFilter" v-on:change="applyFilters">
+						<option value="ALL" hidden disabled selected>Show All</option>
+            <option v-for="state in states" v-bind:value="state.abbreviation">{{ state.name }}</option>
+          </select>
         </fieldset>
       </form>
     </article>
 
-    <article id="data" class="container-fluid"></article>
+    <article class="container-fluid">
+      <table class="table table-responsive table-hover">
+        <thead>
+          <tr>
+            <th>NAME</th>
+            <th>PARTY</th>
+            <th>STATE</th>
+            <th>SENIORITY</th>
+            <th>VOTES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="member in filteredMembers">
+            <td><a v-bind:href="member.url">{{ member.first_name }} {{ member.middle_name }} {{ member.last_name }}</a></td>
+            <td>{{ member.party }}</td>
+            <td>{{ member.state }}</td>
+            <td>{{ member.seniority }}</td>
+            <td>{{ member.votes_with_party_pct }}&#37;</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
   </section>
 
   <footer class="container-fluid panel-footer row text-center">
     <p>&#9400; 2016 TGIF | All Rights Reserved</p>
   </footer>
 
-  <script src="https://unpkg.com/vue/dist/vue.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script src="data/states.js"></script>
   <script src="scripts/utils.js"></script>
   <script src="scripts/congress_loader.js" congress='house'></script>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </body>
 
 </html>

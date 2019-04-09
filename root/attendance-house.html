@@ -48,7 +48,7 @@
     </ul>
   </nav>
 
-  <section class="container-fluid">
+  <section id="app" class="container-fluid">
     <article class="row-fluid">
       <div class="col-xs-6">
         <h2>Attendance</h2>
@@ -56,12 +56,55 @@
         <p>The Senate uses roll-call votes; a clerk calls out the names of all the senators, each senator stating "aye" or "no" when his or her name is announced. The House reserves roll-call votes for the most formal matters, as a roll-call of all 435 representatives takes quite some time; normally, members vote by electronic device. In the case of a tie, the motion in question fails. In the Senate, the Vice President may (if present) cast the tiebreaking vote.</p>
       </div>
 
-      <div id="table-01" class="col-xs-6"></div>
+      <div class="col-xs-6">
+				<table class="table table-responsive table-hover">
+					<thead>
+						<tr>
+							<th v-for="header in table01.headers">{{ header }}</th>
+						</tr>
+					</thead>
+					
+					<tbody>
+						<tr>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
     </article>
 
     <article class="row-fluid">
-      <div id="table-02" class="col-xs-6"></div>
-      <div id="table-03" class="col-xs-6"></div>
+      <div class="col-xs-6">
+				<table class="table table-responsive table-hover">
+					<thead>
+						<tr>
+							<th v-for="header in table02.headers">{{ header }}</th>
+						</tr>
+					</thead>
+					
+					<tbody>
+						<tr>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+      
+			<div class="col-xs-6">
+				<table class="table table-responsive table-hover">
+					<thead>
+						<tr>
+							<th v-for="header in table03.headers">{{ header }}</th>
+						</tr>
+					</thead>
+					
+					<tbody>
+						<tr>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
     </article>
   </section>
 
