@@ -3,66 +3,88 @@ let app;
 LoadData();
 
 function LoadData() {
-	let congress = document.currentScript.getAttribute('congress');
-	let d = data_tables;
-	let page;
-	
-	if (document.currentScript.getAttribute('page') === 'attendance') {
-		page = 0;
-	} else {
-		page = 1;
-	}
-	
-	app = new Vue({
-		el: 'app',
-		data: {
-			table01: {
-				caption: d.table01.caption.replace('*', congress.charAt(0).toUpperCase() + congress.substr(1)),
-				headers: d.table_01.headers,
-				col01: d.table_01[page].data[congress][0],
-				col02: d.table_01[page].data[congress][1],
-				col03: d.table_01[page].data[congress][2]
-			},
-			table02: {
-				caption: d.table02.caption.replace('*', congress.charAt(0).toUpperCase() + congress.substr(1)),
-				headers: d.table_02.headers,
-				names: d.table_02[page].data[congress][0],
-				links: d.table_02[page].data[congress][1],
-				col03: d.table_02[page].data[congress][2],
-				col04: d.table_02[page].data[congress][3]
-			},
-			table03: {
-				caption: d.table02.caption.replace('*', congress.charAt(0).toUpperCase() + congress.substr(1)),
-				headers: d.table_02.headers,
-				names: d.table_02[page].data[congress][0],
-				links: d.table_02[page].data[congress][1],
-				col03: d.table_02[page].data[congress][2],
-				col04: d.table_02[page].data[congress][3]
-			}
-		},
-		methods: {
-			getRows: function(columns) {
-				let i = 0;
-				let rows = columns[0].length;
-				let cols = columns.length;
-				
-				let data = [];
-				let row;
-				
-				while (i < rows) {
-					row = [];
-					
-					for (let j = 0; j < cols; j++) {
-						row.push(columns[j][i]);
-					}
-					
-					data.push(row);
-					i++;
-				}
-			}
-		}
-	})
+  let congress = document.currentScript.getAttribute('congress');
+  let d = data_tables;
+
+  let page;
+  if (document.currentScript.getAttribute('page') === 'attendance') {
+    page = 0;
+  } else {
+    page = 1;
+  }
+
+  app = new Vue({
+    el: '#app',
+    data: {
+      table01: {
+        caption: d.table_01[page].caption.replace('*', congress.charAt(0).toUpperCase() + congress.substr(1)),
+        headers: d.table_01[page].headers,
+        columns: AppendMatrixData([
+                  d.table_01[page].data[congress][0],
+                  d.table_01[page].data[congress][1],
+                  d.table_01[page].data[congress][2]
+                ])
+      },
+      table02: {
+        caption: d.table_02[page].caption.replace('*', congress.charAt(0).toUpperCase() + congress.substr(1)),
+        headers: d.table_02[page].headers,
+        representatives: CreateCongressTableObjs(
+          d.table_02[page].data[congress][0],
+          d.table_02[page].data[congress][1],
+          [
+            d.table_02[page].data[congress][2],
+            d.table_02[page].data[congress][3]
+          ])
+      },
+      table03: {
+        caption: d.table_03[page].caption.replace('*', congress.charAt(0).toUpperCase() + congress.substr(1)),
+        headers: d.table_03[page].headers,
+        representatives: CreateCongressTableObjs(
+          d.table_03[page].data[congress][0],
+          d.table_03[page].data[congress][1],
+          [
+            d.table_03[page].data[congress][2],
+            d.table_03[page].data[congress][3]
+          ])
+      }
+    }
+  })
 }
+
+function CreateCongressTableObjs(names, links, data) {
+  data = AppendMatrixData(data);
+  let count = data.length;
+  let x = [];
+
+  for (let i = 0; i < count; i++) {
+    x.push([]);
+
+    x[i] = {
+      name: names[i],
+      link: links[i],
+      data: data[i]
+    };
+  }
+
+  return x;
+}
+
+function AppendMatrixData(data) {
+  let cols = data[0].length;
+  let rows = data.length;
+  let x = [];
+
+  for (var i = 0; i < cols; i++) {
+    x.push([]);
+
+    for (var j = 0; j < rows; j++) {
+      x[i].push(data[j][i]);
+    }
+  }
+
+  return x;
+}
+
 
 /*CreateCongressTables();
 
@@ -121,7 +143,7 @@ function CalculateStatistics(property, i) {
   let b = [];
   let c = [];
   let d = [];
-  
+
   let t = 0;
   let total = members.map(x => x.total_votes).reduce((sum, x) => sum += x);
 
@@ -140,7 +162,7 @@ function CalculateStatistics(property, i) {
   data.push(b);
 
   //console.log(JSON.stringify(data));
-  
+
   temp = members.sort(function (a, b) {
     if (a[property] > b[property]) return 1;
     else return -1;
@@ -157,20 +179,20 @@ function CalculateStatistics(property, i) {
     c.push(temp[i][property]);
     d.push((t * 100 / total).toFixed(2) + '%');
   }
-  
+
   data = [];
   data.push(a);
   data.push(b);
   data.push(c);
   data.push(d);
-  
+
   //console.log(JSON.stringify(data));
-  
+
   data = [];
   data.push(a.reverse());
   data.push(b.reverse());
   data.push(c.reverse());
   data.push(d.reverse());
-  
+
   //console.log(JSON.stringify(data));
 }

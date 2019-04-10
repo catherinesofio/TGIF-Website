@@ -57,54 +57,59 @@
       </div>
 
       <div class="col-xs-6">
-				<table class="table table-responsive table-hover">
-					<thead>
-						<tr>
-							<th v-for="header in table01.headers">{{ header }}</th>
-						</tr>
-					</thead>
-					
-					<tbody>
-						<tr>
-							<td></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
+        <table class="table table-responsive table-hover">
+          <caption>{{ table01.caption }}</caption>
+          <thead>
+            <tr>
+              <th v-for="header in table01.headers">{{ header }}</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr v-for="(column, index) in table01.columns">
+              <td v-for="data in column">{{ data }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </article>
 
     <article class="row-fluid">
       <div class="col-xs-6">
-				<table class="table table-responsive table-hover">
-					<thead>
-						<tr>
-							<th v-for="header in table02.headers">{{ header }}</th>
-						</tr>
-					</thead>
-					
-					<tbody>
-						<tr>
-							<td></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-      
-			<div class="col-xs-6">
-				<table class="table table-responsive table-hover">
-					<thead>
-						<tr>
-							<th v-for="header in table03.headers">{{ header }}</th>
-						</tr>
-					</thead>
-					
-					<tbody>
-						<tr>
-							<td></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
+        <table class="table table-responsive table-hover">
+          <caption>{{ table02.caption }}</caption>
+          <thead>
+            <tr>
+              <th v-for="header in table02.headers">{{ header }}</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr v-for="representative in table02.representatives">
+              <td><a v-bind:href="representative.link">{{ representative.name }}</a></td>
+              <td v-for="data in representative.data">{{ data }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-xs-6">
+        <table class="table table-responsive table-hover">
+          <caption>{{ table03.caption }}</caption>
+          <thead>
+            <tr>
+              <th v-for="header in table03.headers">{{ header }}</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr v-for="representative in table03.representatives">
+              <td><a v-bind:href="representative.link">{{ representative.name }}</a></td>
+              <td v-for="data in representative.data">{{ data }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </article>
   </section>
 
@@ -112,12 +117,12 @@
     <p>&#9400; 2016 TGIF | All Rights Reserved</p>
   </footer>
 
-  <script src="data/pro-congress-113-house.js"></script>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script src="data/statistics.js"></script>
   <script src="scripts/utils.js"></script>
   <script src="scripts/statistics_loader.js" congress="house" page="attendance"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </body>
 
 </html>

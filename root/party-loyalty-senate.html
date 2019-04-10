@@ -48,19 +48,67 @@
     </ul>
   </nav>
 
-  <section class="container-fluid">
+  <section id="app" class="container-fluid">
     <article class="row-fluid">
       <div class="col-xs-6">
         <h2>Party Loyalty</h2>
         <p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans respectively, tend to be the most faithful in voting for their party's nominee for office and legislation that backs their party's agenda.</p>
       </div>
 
-      <div id="table-01" class="col-xs-6"></div>
+      <div class="col-xs-6">
+        <table class="table table-responsive table-hover">
+          <caption>{{ table01.caption }}</caption>
+          <thead>
+            <tr>
+              <th v-for="header in table01.headers">{{ header }}</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr v-for="(column, index) in table01.columns">
+              <td v-for="data in column">{{ data }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </article>
 
     <article class="row-fluid">
-      <div id="table-02" class="col-xs-6"></div>
-      <div id="table-03" class="col-xs-6"></div>
+      <div class="col-xs-6">
+        <table class="table table-responsive table-hover">
+          <caption>{{ table02.caption }}</caption>
+          <thead>
+            <tr>
+              <th v-for="header in table02.headers">{{ header }}</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr v-for="representative in table02.representatives">
+              <td><a v-bind:href="representative.link">{{ representative.name }}</a></td>
+              <td v-for="data in representative.data">{{ data }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-xs-6">
+        <table class="table table-responsive table-hover">
+          <caption>{{ table03.caption }}</caption>
+          <thead>
+            <tr>
+              <th v-for="header in table03.headers">{{ header }}</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr v-for="representative in table03.representatives">
+              <td><a v-bind:href="representative.link">{{ representative.name }}</a></td>
+              <td v-for="data in representative.data">{{ data }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </article>
   </section>
 
@@ -68,12 +116,12 @@
     <p>&#9400; 2016 TGIF | All Rights Reserved</p>
   </footer>
 
-  <script src="data/pro-congress-113-senate.js"></script>
-  <script src="data/statistics.js"></script>
-  <script src="scripts/utils.js"></script>
-  <script src="scripts/statistics_loader.js" congress="senate" page="party-loyalty"></script>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="data/statistics.js"></script>
+  <script src="scripts/utils.js"></script>
+  <script src="scripts/statistics_loader.js" congress="senate" page="attendance"></script>
 </body>
 
 </html>

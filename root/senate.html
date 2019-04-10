@@ -66,7 +66,7 @@
         <fieldset class="col-xs-6 text-right">
           <label> Filter by State:</label>
           <select v-model="stateFilter" v-on:change="applyFilters">
-						<option value="ALL" hidden disabled selected>Show All</option>
+            <option value="ALL" hidden disabled selected>Show All</option>
             <option v-for="state in states" v-bind:value="state.abbreviation">{{ state.name }}</option>
           </select>
         </fieldset>
@@ -101,12 +101,12 @@
     <p>&#9400; 2016 TGIF | All Rights Reserved</p>
   </footer>
 
-  <script src="data/states.js"></script>
-  <script src="scripts/utils.js"></script>
-  <script src="scripts/congress_loader.js" congress='senate'></script>
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="data/states.js"></script>
+  <script src="scripts/utils.js"></script>
+  <script src="scripts/congress_loader.js" congress='senate'></script>
 </body>
 
 </html>
