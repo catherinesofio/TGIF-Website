@@ -47,7 +47,7 @@ var data_tables = {
       }
 	},
     {
-      "caption": "Least Loyal (Bottom 0% Attendance)",
+      "caption": "Least Loyal (Bottom 0% of Party)",
       "headers": ["Name", "No. Party Votes", "value", "% Party Votes"],
       "data": {
         "house": [
@@ -73,7 +73,7 @@ var data_tables = {
       }
 	},
     {
-      "caption": "Most Loyal (Bottom 0% Attendance)",
+      "caption": "Most Loyal (Bottom 0% of Party)",
       "headers": ["Name", "No. Missed Votes", "% Missed"],
       "data": {
         "house": [
