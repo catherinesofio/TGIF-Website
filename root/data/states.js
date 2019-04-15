@@ -6,239 +6,829 @@ var data_states = {
     },
 		{
         "name": "Alabama",
-        "abbreviation": "AL"
+        "abbreviation": "AL",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "House",
+						"title": "Representative"
+					}
+				}
     },
     {
         "name": "Alaska",
-        "abbreviation": "AK"
+        "abbreviation": "AK",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "House",
+						"title": "Representative"
+					}
+				}
     },
     {
         "name": "American Samoa",
-        "abbreviation": "AS"
+        "abbreviation": "AS",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "House",
+						"title": "Representative"
+					}
+				}
     },
     {
         "name": "Arizona",
-        "abbreviation": "AZ"
+        "abbreviation": "AZ",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "House",
+						"title": "Representative"
+					}
+				}
     },
     {
         "name": "Arkansas",
-        "abbreviation": "AR"
+        "abbreviation": "AR",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "House",
+						"title": "Representative"
+					}
+				}
     },
     {
         "name": "California",
-        "abbreviation": "CA"
+        "abbreviation": "CA",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "Colorado",
-        "abbreviation": "CO"
+        "abbreviation": "CO",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "House",
+						"title": "Representative"
+					}
+				}
     },
     {
         "name": "Connecticut",
-        "abbreviation": "CT"
+        "abbreviation": "CT",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "Delaware",
-        "abbreviation": "DE"
+        "abbreviation": "DE",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "House",
+						"title": "Representative"
+					}
+				}
     },
     {
         "name": "District Of Columbia",
-        "abbreviation": "DC"
+        "abbreviation": "DC",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "Federated States Of Micronesia",
-        "abbreviation": "FM"
+        "abbreviation": "FM",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "House",
+						"title": "Representative"
+					}
+				}
     },
     {
         "name": "Florida",
-        "abbreviation": "FL"
+        "abbreviation": "FL",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "House",
+						"title": "Representative"
+					}
+				}
     },
     {
         "name": "Georgia",
-        "abbreviation": "GA"
+        "abbreviation": "GA",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "Guam",
-        "abbreviation": "GU"
+        "abbreviation": "GU",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "Hawaii",
-        "abbreviation": "HI"
+        "abbreviation": "HI",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "House",
+						"title": "Representative"
+					}
+				}
     },
     {
         "name": "Idaho",
-        "abbreviation": "ID"
+        "abbreviation": "ID",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "Illinois",
-        "abbreviation": "IL"
+        "abbreviation": "IL",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "House",
+						"title": "Representative"
+					}
+				}
     },
     {
         "name": "Indiana",
-        "abbreviation": "IN"
+        "abbreviation": "IN",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "House",
+						"title": "Representative"
+					}
+				}
     },
     {
         "name": "Iowa",
-        "abbreviation": "IA"
+        "abbreviation": "IA",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "House",
+						"title": "Representative"
+					}
+				}
     },
     {
         "name": "Kansas",
-        "abbreviation": "KS"
+        "abbreviation": "KS",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "Kentucky",
-        "abbreviation": "KY"
+        "abbreviation": "KY",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "Louisiana",
-        "abbreviation": "LA"
+        "abbreviation": "LA",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "Maine",
-        "abbreviation": "ME"
+        "abbreviation": "ME",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "House",
+						"title": "Representative"
+					}
+				}
     },
     {
         "name": "Marshall Islands",
-        "abbreviation": "MH"
+        "abbreviation": "MH",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "House",
+						"title": "Representative"
+					}
+				}
     },
     {
         "name": "Maryland",
-        "abbreviation": "MD"
+        "abbreviation": "MD",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "House",
+						"title": "Representative"
+					}
+				}
     },
     {
         "name": "Massachusetts",
-        "abbreviation": "MA"
+        "abbreviation": "MA",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "House",
+						"title": "Representative"
+					}
+				}
     },
     {
         "name": "Michigan",
-        "abbreviation": "MI"
+        "abbreviation": "MI",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "Minnesota",
-        "abbreviation": "MN"
+        "abbreviation": "MN",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "Mississippi",
-        "abbreviation": "MS"
+        "abbreviation": "MS",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "Missouri",
-        "abbreviation": "MO"
+        "abbreviation": "MO",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "House",
+						"title": "Representative"
+					}
+				}
     },
     {
         "name": "Montana",
-        "abbreviation": "MT"
+        "abbreviation": "MT",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "House",
+						"title": "Representative"
+					}
+				}
     },
     {
         "name": "Nebraska",
-        "abbreviation": "NE"
+        "abbreviation": "NE",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "House",
+						"title": "Representative"
+					}
+				}
     },
     {
         "name": "Nevada",
-        "abbreviation": "NV"
+        "abbreviation": "NV",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "New Hampshire",
-        "abbreviation": "NH"
+        "abbreviation": "NH",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "New Jersey",
-        "abbreviation": "NJ"
+        "abbreviation": "NJ",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "New Mexico",
-        "abbreviation": "NM"
+        "abbreviation": "NM",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "New York",
-        "abbreviation": "NY"
+        "abbreviation": "NY",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "House",
+						"title": "Representative"
+					}
+				}
     },
     {
         "name": "North Carolina",
-        "abbreviation": "NC"
+        "abbreviation": "NC",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "House",
+						"title": "Representative"
+					}
+				}
     },
     {
         "name": "North Dakota",
-        "abbreviation": "ND"
+        "abbreviation": "ND",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "House",
+						"title": "Representative"
+					}
+				}
     },
     {
         "name": "Northern Mariana Islands",
-        "abbreviation": "MP"
+        "abbreviation": "MP",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "Ohio",
-        "abbreviation": "OH"
+        "abbreviation": "OH",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "Oklahoma",
-        "abbreviation": "OK"
+        "abbreviation": "OK",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "Oregon",
-        "abbreviation": "OR"
+        "abbreviation": "OR",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "House",
+						"title": "Representative"
+					}
+				}
     },
     {
         "name": "Palau",
-        "abbreviation": "PW"
+        "abbreviation": "PW",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "Pennsylvania",
-        "abbreviation": "PA"
+        "abbreviation": "PA",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "House",
+						"title": "Representative"
+					}
+				}
     },
     {
         "name": "Puerto Rico",
-        "abbreviation": "PR"
+        "abbreviation": "PR",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "Rhode Island",
-        "abbreviation": "RI"
+        "abbreviation": "RI",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "South Carolina",
-        "abbreviation": "SC"
+        "abbreviation": "SC",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "South Dakota",
-        "abbreviation": "SD"
+        "abbreviation": "SD",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "Tennessee",
-        "abbreviation": "TN"
+        "abbreviation": "TN",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "Texas",
-        "abbreviation": "TX"
+        "abbreviation": "TX",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "Utah",
-        "abbreviation": "UT"
+        "abbreviation": "UT",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "Vermont",
-        "abbreviation": "VT"
+        "abbreviation": "VT",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "Virgin Islands",
-        "abbreviation": "VI"
+        "abbreviation": "VI",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "Virginia",
-        "abbreviation": "VA"
+        "abbreviation": "VA",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "Washington",
-        "abbreviation": "WA"
+        "abbreviation": "WA",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "Assembly",
+						"title": "Assembly Member"
+					}
+				}
     },
     {
         "name": "West Virginia",
-        "abbreviation": "WV"
+        "abbreviation": "WV",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "House",
+						"title": "Representative"
+					}
+				}
     },
     {
         "name": "Wisconsin",
-        "abbreviation": "WI"
+        "abbreviation": "WI",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "House",
+						"title": "Representative"
+					}
+				}
     },
     {
         "name": "Wyoming",
-        "abbreviation": "WY"
+        "abbreviation": "WY",
+				"chambers": {
+					"upper": {
+						"name": "Senate",
+						"title": "Senator"
+					},
+					"lower": {
+						"name": "House",
+						"title": "Representative"
+					}
+				}
     }
 ]
   

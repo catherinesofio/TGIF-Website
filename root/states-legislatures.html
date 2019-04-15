@@ -51,6 +51,25 @@
 
   <section id="app">
     <article class="container-fluid">
+			<table class="table table-responsive table-hover">
+				<thead>
+					<th>LEGISLATOR</th>
+					<th>PARTY</th>
+					<th>STATE</th>
+					<th>CHAMBER</th>
+					<th>TITLE</th>
+				</thead>
+				
+				<tbody>
+					<tr v-for='legislator in legislators'>
+						<td><a v-bind:href='legislator.url'>{{ legislator.name }}</a></td>
+						<td>{{ legislator.party }}</td>
+						<td>{{ legislator.state }}</td>
+						<td>{{ getChamber(legislator) }}</td>
+						<td>{{ getChamberTitle(legislator) }}</td>
+					</tr>
+				</tbody>
+			</table>
     </article>
   </section>
 
@@ -58,10 +77,13 @@
     <p>&#9400; 2016 TGIF | All Rights Reserved</p>
   </footer>
 
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script src="scripts/utils.js"></script>
-  <script src="scripts/statesLegistures_loader.js"></script>
+	<script src="data/states-legislatures.js"></script>
+	<script src="data/states.js"></script>
+	<script src="scripts/statesLegistures_loader.js"></script>
 </body>
 
 </html>
