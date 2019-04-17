@@ -22,7 +22,7 @@ function setData(obj) {
     data: {
       members: obj.results[0].members,
       filteredMembers: dataClone,
-      states: data_states.states,
+      states: dataStates.states,
       partyFilter: 'ALL',
       stateFilter: 'ALL'
     },

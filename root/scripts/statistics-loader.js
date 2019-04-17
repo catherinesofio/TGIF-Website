@@ -4,7 +4,7 @@ loadData();
 
 function loadData() {
 	let congress = document.currentScript.getAttribute('congress');
-	let d = data_tables;
+	let d = dataStatistics;
 
 	let page;
 	if (document.currentScript.getAttribute('page') === 'attendance') {
