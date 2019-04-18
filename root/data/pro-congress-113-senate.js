@@ -1,4 +1,4 @@
-var data_congress = {
+var dataCongress = {
   "status": "OK",
   "copyright": " Copyright (c) 2019 Pro Publica Inc. All Rights Reserved.",
   "results": [

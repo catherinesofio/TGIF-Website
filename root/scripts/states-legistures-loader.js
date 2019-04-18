@@ -1,13 +1,45 @@
-//https://opnsrce.github.io/how-to-load-mustache-js-templates-from-an-external-file-with-jquery
-//http://jonnyreeves.co.uk/2012/using-external-templates-with-mustachejs-and-jquery/
 function loadData() {
-  var template = getTemplate('data/legislators-template.html');
-  
-  $('#legislators').append(Mustache.render(template, dataLegislators.legislators));
+	let data = { 'legislators': dataLegislators.legislators,
+							 'addURL': function() {
+								 return function(value, render) {
+									 let temp = value.split(' ');
+									 
+									 return '<a href="' + temp[0] + '">' + render(temp[1]) + '</a>';
+								 }
+							 },
+							 'getChamberTitle': function() {
+									return function(value, render) {
+										let temp = value.split(' ');
+																									
+										return render(getChamberTitleByState(temp[0], temp[1]));
+									}
+								}
+						 };
+	data.legislators.forEach(x => x.state = getStateName(x.state));
+	
+  loadTemplate('data/legislators-template.html', data, 'legislators', 'template-legislators');
 }
 
-function getTemplate(url, id) {
-  return $(url).filter(id).html();
+function loadTemplate(url, data, parentID, templateID) {
+  $.get(url, template => { applyTemplate(template, data, parentID, templateID); } );
 }
-        
+  
+function applyTemplate(template, data, parentID, templateID) {
+	$('#' + parentID).append(Mustache.render($(template).filter('#' + templateID).html(), data));
+}
+
+function getArrayObjectByProperty(array, property, value) {
+	return array.filter(x => x[property] === value)[0];
+}
+
+function getStateName(abbreviation) {console.log(abbreviation);
+	return getArrayObjectByProperty(dataStates.states, 'abbreviation', abbreviation).name;
+}
+
+function getChamberTitleByState(name, chamber) {
+	let obj = getArrayObjectByProperty(dataStates.states, 'name', name);
+	console.log(chamber);
+	return obj.chambers[chamber].title;
+}
+
 loadData();
