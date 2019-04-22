@@ -1,10 +1,10 @@
 <script id="template-legislators" type="text/html">
 {{#legislators}}
-	<tr>
-		<td>{{#addURL}}{{url}} {{name}}{{/addURL}}</td>
-		<td>{{party}}</td>
-		<td>{{state}}</td>
-		<td>{{#getChamberTitle}}{{state}} {{chamber}}{{/getChamberTitle}}</td>
-	</tr>
+  <tr>
+    <td>{{{nameWithURL}}}</td>
+    <td>{{party}}</td>
+    <td>{{state}}</td>
+    <td>{{chamberTitle}}</td>
+  </tr>
 {{/legislators}}
 </script>
