@@ -5,7 +5,7 @@ function loadData() {
   let data = {
     'legislators': legislators,
     'nameWithURL': function () {
-      return '<a href="' + this.url + '">' + this.name + '</a>';
+      return '<a class="popup" href="' + this.url + '">' + this.name + '</a>';
     },
     'chamberTitle': function () {
       return getChamberTitleByState(this.state, this.chamber);
@@ -13,6 +13,8 @@ function loadData() {
   };
   data.legislators.forEach(x => x.state = getStateName(x.state));
   loadTemplate('data/legislators-template.html', data, 'legislators', 'template-legislators');
+	
+	$('a.popup').colorbox();
 }
 
 function loadTemplate(url, data, parentID, templateID) {
