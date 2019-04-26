@@ -1,11 +1,11 @@
 function loadData() {
   let state = document.currentScript.getAttribute('state');
   let legislators = (state === 'ALL') ? dataLegislators.legislators : dataLegislators.legislators.filter(x => x.state === state);
-  
+
   let data = {
     'legislators': legislators,
     'nameWithURL': function () {
-      return '<a class="popup" href="' + this.url + '">' + this.name + '</a>';
+      return '<a class="iframe" href="' + this.url + '">' + this.name + '</a>';
     },
     'chamberTitle': function () {
       return getChamberTitleByState(this.state, this.chamber);
@@ -13,8 +13,8 @@ function loadData() {
   };
   data.legislators.forEach(x => x.state = getStateName(x.state));
   loadTemplate('data/legislators-template.html', data, 'legislators', 'template-legislators');
-	
-	$('a.popup').colorbox();
+
+  $('a.iframe').colorbox();//each(x => x.addEventListener('click', (function (e) { e.preventDefault(); $.colorbox({href: this.href, iframe: true}); console.log('oli'); })));
 }
 
 function loadTemplate(url, data, parentID, templateID) {
