@@ -2,88 +2,89 @@
 <html lan="eng">
 
 <head>
-  <title>TGIF</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="styles/style.css">
+	<title>TGIF</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="plugins/colorbox.css" />
+	<link rel="stylesheet" href="styles/style.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
 </head>
 
 <body class="container-fluid">
-  <header class="row justify-content-between">
-    <div class="col-xs-6">
-      <img src="assets/logo.png" alt="logo" class="col-xs-1">
-      <h1 class="col-xs-6">TGIF</h1>
-    </div>
-    <div class="col-xs-6">
-      <img src="assets/contact.png" alt="contact" class="col-xs-6">
-      <a href="mailto:info@tgif.net" class="col-xs-1">info@tgif.net</a>
-    </div>
-  </header>
+	<header class="row justify-content-between">
+		<div class="col-xs-6">
+			<img src="assets/logo.png" alt="logo" class="col-xs-1">
+			<h1 class="col-xs-6">TGIF</h1>
+		</div>
+		<div class="col-xs-6">
+			<img src="assets/contact.png" alt="contact" class="col-xs-6">
+			<a href="mailto:info@tgif.net" class="col-xs-1">info@tgif.net</a>
+		</div>
+	</header>
 
-  <nav class="container-fluid row navbar navbar-default overflow-hidden">
-    <ul class="list-group">
-      <li class="col-sm-1 list-group-item"><a href="#">Home</a></li>
-      <li class="col-sm-2 list-group-item">
-        <a href="#" data-toggle="dropdown">Congress 113</a>
-        <ul class="dropdown-menu list-group">
-          <li><a href="house.html" class="list-group-item">House</a></li>
-          <li><a href="senate.html" class="list-group-item">Senate</a></li>
-        </ul>
-      </li>
-      <li class="col-sm-2 list-group-item">
-        <a href="#" data-toggle="dropdown">Attendance</a>
-        <ul class="dropdown-menu list-group">
-          <li><a href="attendance-house.html" class="list-group-item">House</a></li>
-          <li><a href="attendance-senate.html" class="list-group-item">Senate</a></li>
-        </ul>
-      </li>
-      <li class="col-sm-2 list-group-item">
-        <a href="#" data-toggle="dropdown">Party Loyalty</a>
-        <ul class="dropdown-menu list-group">
-          <li><a href="party-loyalty-house.html" class="list-group-item">House</a></li>
-          <li><a href="party-loyalty-senate.html" class="list-group-item">Senate</a></li>
-        </ul>
-      </li>
-      <li class="col-sm-2 list-group-item">
-        <a href="#" data-toggle="dropdown">States Legislatures</a>
-        <ul class="dropdown-menu list-group">
-          <li><a href="#" class="list-group-item">States Legislatures</a></li>
-          <li><a href="dc-legislatures.html" class="list-group-item">DC Legislature</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
+	<nav class="container-fluid row navbar navbar-default overflow-hidden">
+		<ul class="list-group">
+			<li class="col-sm-1 list-group-item"><a href="#">Home</a></li>
+			<li class="col-sm-2 list-group-item">
+				<a href="#" data-toggle="dropdown">Congress 113</a>
+				<ul class="dropdown-menu list-group">
+					<li><a href="house.html" class="list-group-item">House</a></li>
+					<li><a href="senate.html" class="list-group-item">Senate</a></li>
+				</ul>
+			</li>
+			<li class="col-sm-2 list-group-item">
+				<a href="#" data-toggle="dropdown">Attendance</a>
+				<ul class="dropdown-menu list-group">
+					<li><a href="attendance-house.html" class="list-group-item">House</a></li>
+					<li><a href="attendance-senate.html" class="list-group-item">Senate</a></li>
+				</ul>
+			</li>
+			<li class="col-sm-2 list-group-item">
+				<a href="#" data-toggle="dropdown">Party Loyalty</a>
+				<ul class="dropdown-menu list-group">
+					<li><a href="party-loyalty-house.html" class="list-group-item">House</a></li>
+					<li><a href="party-loyalty-senate.html" class="list-group-item">Senate</a></li>
+				</ul>
+			</li>
+			<li class="col-sm-2 list-group-item">
+				<a href="#" data-toggle="dropdown">States Legislatures</a>
+				<ul class="dropdown-menu list-group">
+					<li><a href="#" class="list-group-item">States Legislatures</a></li>
+					<li><a href="dc-legislatures.html" class="list-group-item">DC Legislature</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
 
-  <section>
-    <article class="container-fluid">
-      <table class="table table-responsive table-hover">
-        <thead>
-          <th>LEGISLATOR</th>
-          <th>PARTY</th>
-          <th>STATE</th>
-          <th>CHAMBER TITLE</th>
-        </thead>
+	<section>
+		<article class="container-fluid">
+			<table class="table table-responsive table-hover">
+				<thead>
+					<th>LEGISLATOR</th>
+					<th>PARTY</th>
+					<th>STATE</th>
+					<th>CHAMBER TITLE</th>
+				</thead>
 
-        <tbody id="legislators">
-        </tbody>
-      </table>
-    </article>
-  </section>
+				<tbody id="legislators">
+				</tbody>
+			</table>
+		</article>
+	</section>
 
-  <footer class="container-fluid panel-footer row text-center">
-    <p>&#9400; 2016 TGIF | All Rights Reserved</p>
-  </footer>
+	<footer class="container-fluid panel-footer row text-center">
+		<p>&#9400; 2016 TGIF | All Rights Reserved</p>
+	</footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js" type="text/javascript"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <script src="plugins/jquery.colorbox-min.js"></script>
-  <script src="plugins/jquery.colorbox.js"></script>
-  <script src="scripts/utils.js"></script>
-  <script src="data/legislators.js"></script>
-  <script src="data/states.js"></script>
-  <script src="scripts/states-legistures-loader.js" state="ALL"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="plugins/jquery.colorbox.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js" type="text/javascript"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script src="scripts/utils.js"></script>
+	<script src="scripts/website-frame.js"></script>
+	<script src="data/legislators.js"></script>
+	<script src="data/states.js"></script>
+	<script src="scripts/states-legistures-loader.js" state="ALL"></script>
 </body>
 
 </html>

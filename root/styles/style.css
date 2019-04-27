@@ -2,3 +2,12 @@ img {
 	min-width: 75px;
 	max-width: 75px;
 }
+
+#website-frame { 
+	width: 100%;
+	height: 100%;
+	
+	position: absolute;
+	
+	z-index: 1;
+}
