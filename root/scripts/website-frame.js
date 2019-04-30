@@ -19,11 +19,14 @@ function initWebFrame() {
 
 	frame.onclick = onClickFrame;
 
-	$(webFrameTriggerClass).each(x => {
-		console.log(x.title);
-		x.setAttribute('target', name);
-		x.onclick = onOpenFrame;
-	});
+	let urls = document.getElementsByClassName(webFrameTriggerClass);
+	console.log(document.getElementsByClassName(webFrameTriggerClass));
+	console.log(urls.length);
+	for (let i = urls.length - 1; i >= 0; i--) {
+		console.log(urls[i].title);
+		urls[i].setAttribute('target', name);
+		urls[i].onclick = onOpenFrame;
+	}
 }
 
 function onOpenFrame(e) {
@@ -40,4 +43,7 @@ function onClickFrame(e) {
 	window.open(currURL);
 }
 
+window.onload = initWebFrame;
+//document.addEventListener("DOMContentLoaded", function(e) { initWebFrame; });
+//$(document).ready(initWebFrame);
 //$(window).on('load', initWebFrame);
