@@ -1,49 +1,45 @@
-const webFrameTriggerClass = "website-frame-trigger";
+const webFrameTriggerClass = 'frame-trigger';
 
 let container;
 let currURL = '';
 
 function initWebFrame() {
-	let name = 'website-frame';
+  let containerName = 'frame-container';
+  let previewName = 'frame-preview';
 
-	container = document.createElement('div');
-	container.setAttribute('id', name);
-	container.style.display = 'none';
-	document.body.appendChild(container);
+  container = document.createElement('div');
+  container.id = containerName;
+  container.style.display = 'none';
+  document.body.insertBefore(container, document.getElementsByTagName('header')[0]);
+  
+  container.onclick = onCloseFrame;
 
-	container.onclick = onCloseFrame;
+  let frame = document.createElement('iframe');
+  frame.setAttribute('name', previewName);
+  frame.setAttribute('align', 'middle');
+  container.appendChild(frame);
 
-	let frame = document.createElement('iframe');
-	frame.setAttribute('name', name);
-	container.appendChild(frame);
+  frame.onclick = onClickFrame;
 
-	frame.onclick = onClickFrame;
-
-	let urls = document.getElementsByClassName(webFrameTriggerClass);
-	console.log(document.getElementsByClassName(webFrameTriggerClass));
-	console.log(urls.length);
-	for (let i = urls.length - 1; i >= 0; i--) {
-		console.log(urls[i].title);
-		urls[i].setAttribute('target', name);
-		urls[i].onclick = onOpenFrame;
-	}
+  let urls = document.getElementsByClassName(webFrameTriggerClass);
+  for (let i = urls.length - 1; i >= 0; i--) {
+    urls[i].setAttribute('target', previewName);
+    urls[i].onclick = onOpenFrame;
+  }
 }
 
 function onOpenFrame(e) {
-	container.style.display = 'inherit';
+  currURL = e.target.getAttribute('href');
 
-	currURL = e.target.getAttribute('href');
+  container.style.display = 'inherit';
 }
 
 function onCloseFrame(e) {
-	container.style.display = 'none';
+  container.style.display = 'none';
 }
 
 function onClickFrame(e) {
-	window.open(currURL);
+  window.open(currURL);
 }
 
 window.onload = initWebFrame;
-//document.addEventListener("DOMContentLoaded", function(e) { initWebFrame; });
-//$(document).ready(initWebFrame);
-//$(window).on('load', initWebFrame);

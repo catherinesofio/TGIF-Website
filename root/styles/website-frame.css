@@ -1,0 +1,27 @@
+#frame-container {
+  box-sizing: border-box;
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  z-index: 1;
+}
+
+iframe {
+  box-sizing: border-box;
+  display: block;
+
+  margin: auto;
+  
+  top: 50%;
+
+  background-color: white;
+
+  border-color: aquamarine;
+  border-width: 1em;
+}
