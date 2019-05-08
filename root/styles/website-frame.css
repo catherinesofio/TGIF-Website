@@ -1,3 +1,8 @@
+:root {
+  --details-color: navajowhite;
+  --box-shadow: 0em 0em 0.25em rgba(0, 0, 0, 1);
+}
+
 #frame-container {
   box-sizing: border-box;
   display: block;
@@ -16,12 +21,16 @@ iframe {
   box-sizing: border-box;
   display: block;
 
+  width: 50%;
+  height: 50%;
+
   margin: auto;
   
-  top: 50%;
+  transform: translateY(50%);
 
   background-color: white;
 
-  border-color: aquamarine;
-  border-width: 1em;
+  border-width: 0.25em;
+  border-style: solid;
+  border-color: var(--details-color);
 }

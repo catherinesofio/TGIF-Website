@@ -23,6 +23,7 @@ function loadTemplate(url, data, parentID, templateID) {
 
 function applyTemplate(template, data, parentID, templateID) {
   $('#' + parentID).append(Mustache.render($(template).filter('#' + templateID).html(), data));
+  $('table').dataTable();
 }
 
 function getArrayObjectByProperty(array, property, value) {

@@ -11,7 +11,7 @@ function initWebFrame() {
   container.id = containerName;
   container.style.display = 'none';
   document.body.insertBefore(container, document.getElementsByTagName('header')[0]);
-  
+
   container.onclick = onCloseFrame;
 
   let frame = document.createElement('iframe');
@@ -21,7 +21,14 @@ function initWebFrame() {
 
   frame.onclick = onClickFrame;
 
-  let urls = document.getElementsByClassName(webFrameTriggerClass);
+  setWebFrameURLs();
+}
+
+function setWebFrameURLs() {
+  let previewName = 'frame-preview';
+
+  let urls = Array.from(document.getElementsByClassName(webFrameTriggerClass));
+
   for (let i = urls.length - 1; i >= 0; i--) {
     urls[i].setAttribute('target', previewName);
     urls[i].onclick = onOpenFrame;

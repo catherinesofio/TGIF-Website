@@ -13,6 +13,7 @@
   --text-shadow: 0em 0.025em 0.05em rgba(0, 0, 0, 0.25);
   --text-outline: 0em 0.025em 0em whitesmoke, 0em 0.05em 0em whitesmoke, 0em 0.075em 0em whitesmoke, 0em 0.1em 0em whitesmoke;
   --logo-image: url('https://freepngimg.com/thumb/usa/15-2-america-flag-png-hd.png');
+  --email-image: url('https://ehomerestoration.com/wp-content/uploads/2019/02/mail-red.png');
 }
 
 html {
@@ -22,20 +23,20 @@ html {
 body {
   font-family: serif;
   font-size: 1.5em;
-  
-  background-color: var(--background-color);
-  background-image: var(--background-image);
-  background-repeat: no-repeat;
+
+  background-color: darkred;
 }
 
 header {
   height: 9em;
 
-  background-color: white;
+  background-color: whitesmoke;
 
   background-image: var(--logo-image);
   background-repeat: no-repeat;
   background-size: 11em;
+
+  box-shadow: var(--box-shadow);
 }
 
 h1,
@@ -53,12 +54,14 @@ h1 {
   color: var(--h1-color);
 
   font-size: 3em;
+
+  text-shadow: var(--text-shadow);
 }
 
 h2 {
   color: var(--h2-color);
 
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 nav {
@@ -82,8 +85,8 @@ nav li {
 }
 
 .list-group-item {
-  background-color: darkred;
-  
+  background-color: midnightblue;
+
   border-radius: 5px;
   border-width: 0.25em;
   border-style: solid;
@@ -95,45 +98,71 @@ nav li {
 
   text-shadow: var(--text-shadow);
   text-align: center;
-  
   text-decoration: none;
 }
 
 .list-group-item a:hover {
   color: antiquewhite;
-  
-  background-color: darkred;
+
+  font-size: 1.025em;
 }
 
 .dropdown-menu {
+  margin: 0em;
+
   width: 100%;
   
-  margin-top: 0em;
-  
-  background-color: darkred;
+  position: absolute;
   
   border-radius: 0em;
   border-width: 0em;
   border-bottom-width: 0.25em;
-  border-style: solid;
+  border-bottom-style: solid;
   border-color: var(--details-color);
-  
-  box-shadow: 0em 0em 0em rgba(0, 0, 0, 0); 
+
+  background-color: midnightblue;/*rgba(0, 0, 0, 0.25);
+  box-shadow: 0em 0.1em 0.5em rgba(0, 0, 0, 0.25);*/
 }
 
-.dropdown-menu .list-group-item a {
+.dropdown-menu li a {
   color: var(--details-color);
-  
-  background-color: blue;
+
+  font-weight: bold;
+
+  text-shadow: var(--text-shadow);
+
+  background-color: darkred;
+  box-shadow: 0em 0em 0em rgba(0, 0, 0, 0);
+}
+
+.dropdown-menu li a:hover {
+  color: antiquewhite;
+
+  background-color: red;
 }
 
 header a {
+  margin-top: 4em;
+
   text-align: center;
 }
 
 header img {
   min-width: 3em;
   max-width: 3em;
+}
+
+#email {
+  width: 3em;
+  height: 3em;
+
+  margin-top 6em;
+  padding-top: 9em;
+
+  background-image: var(--email-image);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 section {
@@ -144,9 +173,7 @@ section {
 article {
   background-color: var(--article-backgound-color);
 
-  padding-bottom: 1em;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding: 1em;
 
   margin-top: 1em;
   margin-bottom: 1em;
@@ -164,7 +191,7 @@ p {
 
 p,
 a {
-  font-size: 1.25em;
+  font-size: 1em;
 }
 
 article a:hover {
@@ -185,6 +212,7 @@ a:hover {
 
   text-decoration: none;
   text-transform: uppercase;
+  text-shadow: var(--text-shadow);
 }
 
 footer {
@@ -194,7 +222,7 @@ footer {
   padding-bottom: 0.25em;
 
   text-align: center;
-  
+
   border-width: 0.25em;
   border-left-width: 0em;
   border-right-width: 0em;
@@ -210,4 +238,39 @@ footer p {
 
   text-transform: uppercase;
   text-shadow: var(--text-shadow);
+}
+
+table {
+  margin-top: 2em;
+
+  font-size: 1em;
+
+  box-shadow: var(--box-shadow);
+
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+th {
+  background-color: var(--details-color);
+  ;
+}
+
+th:first-child {
+  border-top-left-radius: 5px;
+}
+
+th:last-child {
+  border-top-right-radius: 5px;
+}
+
+tbody {
+  background-color: white;
+}
+
+tbody tr:last-child {
+  border-width: 0em;
+  border-bottom-width: 0.25em;
+  border-style: solid;
+  border-color: var(--details-color);
 }

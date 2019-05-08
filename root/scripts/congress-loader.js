@@ -37,7 +37,12 @@ function setData(obj) {
         if (this.stateFilter !== 'ALL') {
           this.filteredMembers = this.filteredMembers.filter(x => x['state'] === this.stateFilter);
         }
+      },
+      mounted() {
+        setWebFrameURLs()
       }
     }
-  })
+  });
+
+  $('table').dataTable();
 }
