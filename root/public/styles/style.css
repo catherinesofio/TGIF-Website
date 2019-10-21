@@ -274,3 +274,7 @@ tbody tr:last-child {
   border-style: solid;
   border-color: var(--details-color);
 }
+
+footer a {
+  color: dodgerblue;
+}
